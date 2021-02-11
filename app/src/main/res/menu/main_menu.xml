@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto" >
+
+    <item android:id="@+id/location_search_fragment"
+        android:title="@string/action_location"
+        android:icon="@drawable/ic_add_location"
+        myapp:showAsAction="always"/>
+
+    <item android:id="@+id/sync"
+        android:title="@string/action_sync"
+        android:icon="@drawable/ic_sync"
+        myapp:showAsAction="always"/>
+
+    <item android:id="@+id/about_fragment"
+        android:title="@string/action_about"
+        android:icon="@drawable/ic_about"
+        myapp:showAsAction="always"/>
+
+</menu>

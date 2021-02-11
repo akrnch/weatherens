@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/paging_fragment">
+
+    <fragment
+        android:id="@+id/paging_fragment"
+        android:name="com.example.weatherens.ui.pager.PagingFragment"
+        tools:layout="@layout/fragment_pager">
+        <action
+            android:id="@+id/action_pagingFragment_to_locationSearchFragment"
+            app:destination="@id/location_search_fragment" />
+        <action
+            android:id="@+id/action_pagingFragment_to_aboutFragment"
+            app:destination="@id/about_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/location_search_fragment"
+        android:name="com.example.weatherens.ui.location.LocationSearchFragment"
+        tools:layout="@layout/fragment_add_location"/>
+
+    <fragment
+        android:id="@+id/about_fragment"
+        android:name="com.example.weatherens.ui.AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+
+</navigation>

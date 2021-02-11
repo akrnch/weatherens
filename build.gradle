@@ -1,0 +1,75 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlinVersion = '1.4.10'
+    ext.navigationVersion = '2.3.2'
+    ext.ktlintVersion = '0.39.0'
+    ext.hiltCoreVersion = '2.30.1-alpha'
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltCoreVersion"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id "com.diffplug.gradle.spotless" version "3.24.0"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+    apply plugin: 'com.diffplug.gradle.spotless'
+    spotless {
+        kotlin {
+            target "**/*.kt"
+            targetExclude ".idea/"
+            ktlint(ktlintVersion)
+        }
+    }
+}
+
+ext {
+    androidXVersion = '1.0.0'
+    androidXAnnotations = '1.1.0'
+    androidXLegacySupport = '1.0.0'
+    appCompatVersion = '1.2.0'
+    archLifecycleVersion = '2.2.0-rc03'
+    cardVersion = '1.0.0'
+    coroutinesVersion = '1.4.2'
+    dexMakerVersion = '2.12.1'
+    fragmentVersion = '1.2.5'
+    fragmentKtxVersion = '1.2.5'
+    junitVersion = '4.12'
+    materialVersion = '1.2.1'
+    recyclerViewVersion = '1.1.0'
+    roomVersion = '2.3.0-beta01'
+    timberVersion = '4.7.1'
+    gsonVersion = '2.8.6'
+    retrofitVersion = '2.9.0'
+    okhttpVersion = '4.9.0'
+    sandwichVersion = '1.0.8'
+    hiltCoreVersion = '2.31-alpha'
+    hiltVersion = '1.0.0-alpha03'
+    assistedInjectVersion = '0.5.2'
+    dotsVersion = '2.1.6'
+    imageLoaderVersion = '1.9.5'
+    workVersion = '2.5.0'
+    hiltTestVersion = '2.28-alpha'
+    robolectricVersion = '4.4'
+    coreVersion = "1.3.1-alpha02"
+    extJUnitVersion = "1.1.3-alpha02"
+    runnerVersion = "1.3.1-alpha02"
+    espressoVersion = "3.4.0-alpha02"
+}

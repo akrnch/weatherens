@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Weatherens</string>
+    <string name="search_hint">Type a city where you are</string>
+    <string name="action_location">add location</string>
+    <string name="action_about">about author</string>
+    <string name="action_sync">sync data</string>
+    <string name="about_toolbar_title">Aleksey Karankevich</string>
+    <string name="city_search_title">Add place</string>
+    <string name="about_toolbar_subtitle">Android developer</string>
+    <string name="about_content">Weatherens is a sample project made by me with a training purpose.
+        The target was to use and adopt modern android app architecture principles, libraries and approaches together with the pure Kotlin code in a single place.
+        You can use the project as you want in any purpose and feel free to <a href="https://www.linkedin.com/in/aleksey-karankevich-4b8499205">contact me</a>
+        if you have any questions or proposals regarding to the project
+    </string>
+    <string name="location_search_hint">Type city here</string>
+    <string name="about_copy">©Weatherens, 2021</string>
+    <string name="wind_measurement">km/h</string>
+    <string name="cloud_measurement">mm</string>
+    <string name="humidity_measurement">%</string>
+    <string name="wind_label">Wind</string>
+    <string name="clouds_label">Precipitation</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="temperature">%s&#xb0;</string>
+    <string name="avatar_cd">avatar</string>
+    <string name="ic_remove_cd">remove</string>
+    <string name="ic_state_cd">state</string>
+    <string name="empty_cities">Start typing to see locations</string>
+    <string name="empty_pager">Add the first region from menu</string>
+    <string name="add_success">Location added</string>
+    <string name="delete_success">Location deleted</string>
+    <string name="update_error">Data synchronization failed</string>
+    <string name="update_success">Data synchronization completed</string>
+</resources>
