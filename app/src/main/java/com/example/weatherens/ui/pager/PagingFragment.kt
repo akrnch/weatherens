@@ -22,6 +22,8 @@ class PagingFragment : Fragment() {
     private val sharedViewModel: PagingViewModel by activityViewModels()
     private lateinit var adapter: WeatherFragmentAdapter
 
+    private var needMoveToLastItem = true
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,6 +51,11 @@ class PagingFragment : Fragment() {
             adapter = WeatherFragmentAdapter(requireActivity())
             adapter.setData(data)
             binding.pager.adapter = adapter
+            if (needMoveToLastItem) {
+                binding.pager.setCurrentItem((data?.size ?: 0) - 1, false)
+            } else {
+                needMoveToLastItem = true
+            }
             binding.indicator.setViewPager(binding.pager)
         })
         sharedViewModel.deletedLiveData.observe(viewLifecycleOwner, Observer { data ->
@@ -74,6 +81,7 @@ class PagingFragment : Fragment() {
                     if (workInfo != null && workInfo.state.isFinished) {
                         when (workInfo.state) {
                             WorkInfo.State.SUCCEEDED -> {
+                                needMoveToLastItem = false
                                 sharedViewModel.loadSavedWeather()
                                 view?.let { bindToast(it, getString(R.string.update_success)) }
                             }

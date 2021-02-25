@@ -36,12 +36,12 @@ class WeatherRepository @Inject constructor(
         val allWeather = weatherDao.getWeather()
         if (!allWeather.isNullOrEmpty()) {
             for (item: WeatherEntity in allWeather) {
-                val query = "%.4f".format(item.lat) + "," + "%.4f".format(item.lon);
+                val query = "%.4f".format(item.lat).replace(",",".") + "," + "%.4f".format(item.lon).replace(",",".")
                 val updated = withTimeout(1_000) {
                     apiClient.getWeatherForLocation(query)
                 }
                 updated.suspendOnSuccess {
-                    weatherDao.updateWeatherForPlace(data!!.toRoom())
+                    weatherDao.insertWeatherForPlace(data!!.toRoom())
                     onSuccess()
                 }.onError {
                     onError("[Code: $statusCode]: ${message()}")
